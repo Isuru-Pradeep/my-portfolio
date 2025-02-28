@@ -1,101 +1,140 @@
-import Image from "next/image";
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ProjectCard from "@/components/ProjectCard";
+import { useEffect, useState } from "react";
+import Hero from "@/components/Hero";
 
-export default function Home() {
+const generateParticles = (count: number) => {
+  return Array.from({ length: count }, () => ({
+    width: Math.random() * 10 + 5,
+    height: Math.random() * 10 + 5,
+    left: Math.random() * 100 + "%",
+    top: Math.random() * 100 + "%",
+  }));
+};
+
+const Home = () => {
+  const [particles, setParticles] = useState(generateParticles(10));
+
+  useEffect(() => {
+    setParticles(generateParticles(10));
+  }, []);
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  };
+
+  const backgroundVariants = {
+    hidden: { scale: 1.1, opacity: 0.3 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.8 },
+    },
+  };
+
+  const decorativeShapeVariants = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: {
+      pathLength: 1,
+      opacity: 0.3,
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Navbar />
+      <main className="bg-background min-h-screen flex flex-col">
+        {/* Hero Section */}
+        <Hero />
+        {/* Rest of your sections */}
+        <section className="py-16 flex-grow">
+          {/* Your existing About Section */}
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl font-bold text-primary mb-4">About Me</h2>
+            <p className="text-lg text-text mb-8">
+              I have experience in technology-related projects, including AI
+              development, full-stack software systems, and entrepreneurial
+              ventures.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300"
+            >
+              <Link href="/about" legacyBehavior>
+                <a>View Profile</a>
+              </Link>
+            </motion.button>
+          </div>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* Recent Projects Section */}
+        <section className="py-16">
+          {/* Your existing Projects Section */}
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold text-primary text-center mb-8">
+              Recent Projects
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Project Cards */}
+              <ProjectCard
+                project={{
+                  title:
+                    "AI Model for Identifying Interior Designs and Textures",
+                  description:
+                    "Using AWS and Spring Boot to segment walls and analyze textures for intelligent insights.",
+                  technologies: [
+                    "AWS",
+                    "Spring Boot",
+                    "AI",
+                    "Image Segmentation",
+                  ],
+                }}
+              />
+              <ProjectCard
+                project={{
+                  title: "POS System for Shops",
+                  description:
+                    "Developed using Spring Boot with a robust architecture of controller, DTO, entity, repository, and service layers.",
+                  technologies: ["Spring Boot", "Java", "Database Management"],
+                }}
+              />
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Footer />
+    </>
   );
-}
+};
+
+export default Home;
