@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
       whileHover={{ scale: 1.03 }}
     >
-      <h3 className="text-xl font-semibold text-primary mb-2">
+      <h3 className="text-xl font-semibold text-secondary mb-2">
         {titleLines.map((line, index) => (
           <React.Fragment key={index}>
             {line}
