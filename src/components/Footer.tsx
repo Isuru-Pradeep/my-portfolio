@@ -16,24 +16,33 @@ const Footer = () => {
           &copy; 2025 Zephyr Matrix. All rights reserved.
         </p>
         <div className="flex space-x-4">
-          <Link href="https://linkedin.com/in/isuru-pradeep" legacyBehavior>
-            <a className="hover:text-secondary flex items-center space-x-2">
-              <FiLinkedin />
-              <span>LinkedIn</span>
-            </a>
-          </Link>
-          <Link href="https://github.com/Isuru-Pradeep" legacyBehavior>
-            <a className="hover:text-secondary flex items-center space-x-2">
-              <FiGithub />
-              <span>GitHub</span>
-            </a>
-          </Link>
-          <Link href="https://wa.me/+94766664562" legacyBehavior>
-            <a className="hover:text-secondary flex items-center space-x-2">
-              <FiPhone />
-              <span>WhatsApp</span>
-            </a>
-          </Link>
+          <a
+            href="https://linkedin.com/in/isuru-pradeep"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-secondary flex items-center space-x-2"
+          >
+            <FiLinkedin />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://github.com/Isuru-Pradeep"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-secondary flex items-center space-x-2"
+          >
+            <FiGithub />
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://wa.me/+94766664562"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-secondary flex items-center space-x-2"
+          >
+            <FiPhone />
+            <span>WhatsApp</span>
+          </a>
         </div>
       </div>
     </motion.footer>
