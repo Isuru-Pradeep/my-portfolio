@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface ContactFormProps {}
 
 const ContactForm: React.FC<ContactFormProps> = () => {
@@ -32,7 +33,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
       console.log(result);
       setSubmissionResult("success");
       setFormData({ name: "", email: "", message: "" });
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
       setSubmissionResult("error");
     } finally {

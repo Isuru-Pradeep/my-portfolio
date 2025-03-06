@@ -6,6 +6,13 @@ import ProjectCard from "@/components/ProjectCard";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+type GitHubRepo = {
+  name: string;
+  description: string | null;
+  language: string | null;
+  html_url: string;
+};
+
 const highlightedProjects = [
   {
     title: "AI Model for Identifying Interior Wall and Textures",
@@ -57,7 +64,7 @@ const Projects = () => {
         }
         const data = await response.json();
 
-        const transformedProjects = data.map((repo: any) => ({
+        const transformedProjects = data.map((repo: GitHubRepo) => ({
           title: repo.name,
           description: repo.description || "No description provided.",
           technologies: repo.language ? [repo.language] : [],

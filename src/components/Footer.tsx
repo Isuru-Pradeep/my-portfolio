@@ -16,13 +16,13 @@ const Footer = () => {
           &copy; 2025 Zephyr Matrix. All rights reserved.
         </p>
         <div className="flex space-x-4">
-          <Link href="https://linkedin.com" legacyBehavior>
+          <Link href="https://linkedin.com/in/isuru-pradeep" legacyBehavior>
             <a className="hover:text-secondary flex items-center space-x-2">
               <FiLinkedin />
               <span>LinkedIn</span>
             </a>
           </Link>
-          <Link href="https://github.com" legacyBehavior>
+          <Link href="https://github.com/Isuru-Pradeep" legacyBehavior>
             <a className="hover:text-secondary flex items-center space-x-2">
               <FiGithub />
               <span>GitHub</span>

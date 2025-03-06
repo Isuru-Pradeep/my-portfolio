@@ -4,7 +4,7 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import { FiArrowRight } from "react-icons/fi";
@@ -14,28 +14,17 @@ import Image from "next/image";
 // Harmonious color palette
 const COLORS_TOP = ["#3E92CC", "#22AED1"];
 
-const generateParticles = (count: number) => {
-  return Array.from({ length: count }, () => ({
-    width: Math.random() * 10 + 5,
-    height: Math.random() * 10 + 5,
-    left: Math.random() * 100 + "%",
-    top: Math.random() * 100 + "%",
-  }));
-};
-
 const Hero = () => {
-  const [particles, setParticles] = useState(generateParticles(10));
   const color = useMotionValue(COLORS_TOP[0]);
 
   useEffect(() => {
-    setParticles(generateParticles(10));
     animate(color, COLORS_TOP, {
       ease: "easeInOut",
       duration: 10,
       repeat: Infinity,
       repeatType: "mirror",
     });
-  }, []);
+  }, [color]);
 
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
   const border = useMotionTemplate`1px solid ${color}`;
@@ -51,7 +40,7 @@ const Hero = () => {
       <div className="relative z-10 flex flex-col items-center space-y-6 md:flex-row md:space-y-0 md:space-x-6">
         <div className="flex flex-col items-center space-y-6">
           <h1 className="max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text text-center text-4xl font-semibold leading-tight text-transparent sm:text-5xl sm:leading-tight md:text-7xl md:leading-tight cursor-default">
-            Hello world !, I'm Isuru Pradeep.
+            Hello world !, I&apos;m Isuru Pradeep.
           </h1>
           <p className="max-w-xl text-center text-base leading-relaxed md:text-lg md:leading-relaxed cursor-default">
             Face what you fear.

@@ -8,21 +8,10 @@ import ProjectCard from "@/components/ProjectCard";
 import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 
-const generateParticles = (count: number) => {
-  return Array.from({ length: count }, () => ({
-    width: Math.random() * 10 + 5,
-    height: Math.random() * 10 + 5,
-    left: Math.random() * 100 + "%",
-    top: Math.random() * 100 + "%",
-  }));
-};
-
 const Home = () => {
-  const [particles, setParticles] = useState(generateParticles(10));
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setParticles(generateParticles(10));
     const handleLoad = () => setLoading(false);
     if (document.readyState === "complete") {
       handleLoad();
