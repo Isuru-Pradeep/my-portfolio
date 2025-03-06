@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FiLinkedin, FiGithub } from "react-icons/fi";
+import { FiLinkedin, FiGithub, FiPhone } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -26,6 +26,12 @@ const Footer = () => {
             <a className="hover:text-secondary flex items-center space-x-2">
               <FiGithub />
               <span>GitHub</span>
+            </a>
+          </Link>
+          <Link href="https://wa.me/+94766664562" legacyBehavior>
+            <a className="hover:text-secondary flex items-center space-x-2">
+              <FiPhone />
+              <span>WhatsApp</span>
             </a>
           </Link>
         </div>

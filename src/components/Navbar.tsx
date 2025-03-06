@@ -73,7 +73,7 @@ const Navbar = () => {
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                   legacyBehavior
                 >
-                  <a className="hover:text-secondary text-sm md:text-base transition-colors duration-300">
+                  <a className="hover:text-secondary text-sm md:text-base transition-colors duration-300 block md:inline-block">
                     {item}
                   </a>
                 </Link>

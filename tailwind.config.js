@@ -26,30 +26,31 @@ module.exports = {
     extend: {
       colors: {
         // Rich teal as primary - professional yet distinctive
-        primary: "#136F63", 
+        primary: "#136F63",
         // Softer complementary accent - creates balance
-        secondary: "#3E92CC", 
+        secondary: "#3E92CC",
         // Lighter tint for highlights and accents
-        tertiary: "#22AED1", 
+        tertiary: "#22AED1",
         // Warm off-white background for readability
-        background: "#F8F9FA", 
+        background: "#F8F9FA",
         // Deep charcoal for text - softer than pure black
-        text: "#2D3142", 
+        text: "#2D3142",
         // Accent color for calls-to-action
-        accent: "#D81E5B", 
+        accent: "#D81E5B",
         // Light gray for subtle dividers and secondary elements
-        neutral: "#E6E8E6", 
+        neutral: "#E6E8E6",
+        h3: "#3E92CC",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Montserrat', 'sans-serif'],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        heading: ["Montserrat", "sans-serif"],
       },
       boxShadow: {
-        'custom': '0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1)',
-        'hover': '0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)',
+        custom: "0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1)",
+        hover: "0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)",
       },
       borderRadius: {
-        'xl': '1rem',
+        xl: "1rem",
       },
     },
   },

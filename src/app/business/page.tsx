@@ -9,7 +9,7 @@ const Business = () => {
         <title>Business Ventures</title>
       </Head>
       <Navbar />
-      <div className="flex flex-col items-center justify-center min-h-screen bg-background">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-background px-8">
         <h1 className="text-4xl font-bold text-primary">Business Ventures</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div className="bg-white shadow-lg p-6 rounded-lg">

@@ -1,4 +1,5 @@
 "use client";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -18,56 +19,26 @@ const generateParticles = (count: number) => {
 
 const Home = () => {
   const [particles, setParticles] = useState(generateParticles(10));
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setParticles(generateParticles(10));
+    const handleLoad = () => setLoading(false);
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+      const timer = setTimeout(handleLoad, 5000);
+      return () => {
+        window.removeEventListener("load", handleLoad);
+        clearTimeout(timer);
+      };
+    }
   }, []);
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
-      },
-    },
-  };
-
-  const backgroundVariants = {
-    hidden: { scale: 1.1, opacity: 0.3 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 0.8 },
-    },
-  };
-
-  const decorativeShapeVariants = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: {
-      pathLength: 1,
-      opacity: 0.3,
-      transition: {
-        duration: 1.5,
-        ease: "easeInOut",
-      },
-    },
-  };
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <>
@@ -77,23 +48,24 @@ const Home = () => {
         <Hero />
         {/* Rest of your sections */}
         <section className="py-16 flex-grow">
-          {/* Your existing About Section */}
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold text-primary mb-4">About Me</h2>
             <p className="text-lg text-text mb-8">
-              I have experience in technology-related projects, including AI
-              development, full-stack software systems, and entrepreneurial
-              ventures.
+              Passionate about AI, full-stack development, and innovative tech
+              solutions, I build software that bridges creativity and
+              functionality. With experience in developing intelligent systems
+              and scalable applications, I thrive on solving complex challenges
+              through technology.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300"
-            >
-              <Link href="/about" legacyBehavior>
-                <a>View Profile</a>
-              </Link>
-            </motion.button>
+            <Link href="/about" legacyBehavior>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-accent text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300"
+              >
+                <a>Learn More</a>
+              </motion.button>
+            </Link>
           </div>
         </section>
 
@@ -108,26 +80,38 @@ const Home = () => {
               {/* Project Cards */}
               <ProjectCard
                 project={{
-                  title:
-                    "AI Model for Identifying Interior Designs and Textures",
+                  title: "AI Model for Identifying Interior Wall and Textures",
                   description:
-                    "Using AWS and Spring Boot to segment walls and analyze textures for intelligent insights.",
+                    "Developed an AI model using ResNet and YOLOv11 for object detection, segmentation, and texture analysis of interior walls.",
                   technologies: [
                     "AWS",
                     "Spring Boot",
                     "AI",
                     "Image Segmentation",
+                    "Deep Learning",
+                    "Python",
                   ],
                 }}
               />
               <ProjectCard
                 project={{
-                  title: "POS System for Shops",
+                  title: "Sri Lanka Dream Vacation Website",
                   description:
-                    "Developed using Spring Boot with a robust architecture of controller, DTO, entity, repository, and service layers.",
-                  technologies: ["Spring Boot", "Java", "Database Management"],
+                    "A travel services website promoting tours and cab services for foreign travelers in Sri Lanka.",
+                  technologies: ["React", "HTML", "CSS", "JavaScript"],
                 }}
               />
+            </div>
+            <div className="flex justify-center">
+              <Link href="/projects" legacyBehavior>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-accent text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300 mt-5"
+                >
+                  <a>See More Projects</a>
+                </motion.button>
+              </Link>
             </div>
           </div>
         </section>
