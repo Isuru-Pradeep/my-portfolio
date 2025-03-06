@@ -46,8 +46,7 @@ const Home = () => {
       <main className="bg-background min-h-screen flex flex-col">
         {/* Hero Section */}
         <Hero />
-        {/* Rest of your sections */}
-        <section className="py-16 flex-grow">
+        <section className="py-16 flex-grow px-8">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold text-primary mb-4">About Me</h2>
             <p className="text-lg text-text mb-8">
@@ -70,7 +69,7 @@ const Home = () => {
         </section>
 
         {/* Recent Projects Section */}
-        <section className="py-16">
+        <section className="py-16 px-8">
           {/* Your existing Projects Section */}
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-primary text-center mb-8">

@@ -95,7 +95,7 @@ const Projects = () => {
         <title>My Projects</title>
       </Head>
       <Navbar />
-      <div className="flex flex-col items-center justify-center min-h-screen bg-background py-8">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-background py-8 px-8">
         <motion.h1
           className="text-4xl font-bold text-primary mb-8 mt-10"
           initial={{ opacity: 0, y: -50 }}

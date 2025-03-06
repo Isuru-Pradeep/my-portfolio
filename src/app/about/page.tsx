@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -36,7 +35,7 @@ const About = () => {
       <Navbar />
       <main className="bg-background min-h-screen flex flex-col px-8">
         {/* Hero Section */}
-        <section className="py-16 text-center">
+        <section className="py-16">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -45,7 +44,7 @@ const About = () => {
           >
             <motion.h1
               variants={itemVariants}
-              className="text-4xl font-bold text-primary mb-6"
+              className="text-4xl font-bold text-primary mb-6 text-center"
             >
               About Me
             </motion.h1>
@@ -61,7 +60,7 @@ const About = () => {
             </div>
             <motion.p
               variants={itemVariants}
-              className="text-lg text-text mt-4 text-pretty"
+              className="text-lg text-text mt-4 text-left"
             >
               I’m Isuru Pradeep, an IT professional passionate about technology,
               entrepreneurship, and creative problem-solving. With a diverse
@@ -72,17 +71,17 @@ const About = () => {
               <br />
               I specialize in software development, AI, and cloud computing,
               working with technologies like Java, Spring Boot, React, Next.js,
-              Python, C, C++, MySQL, and MongoDB. I have hands-on experience in
-              containerization and DevOps using Docker, along with cloud
-              platforms like AWS. My AI expertise includes machine learning,
-              deep learning, and computer vision, such as developing models for
-              image recognition, object detection, and wall texture analysis.
+              Python, AWS, and Firebase. My AI expertise includes machine
+              learning models for image recognition and deep learning
+              applications.
               <br />
               <br />
               Beyond coding, I have an entrepreneurial mindset, having launched
-              ventures like Zephyr Matrix, Valentina Clothing, and IP Market. I
-              am also exploring cybersecurity and ethical hacking to enhance my
-              expertise in digital security.
+              ventures like Zephyr Matrix (an IT solutions company) and
+              Valentina Clothing (an online fashion store). I am also exploring
+              cybersecurity and ethical hacking to enhance my expertise in
+              digital security. Driven by innovation, I aim to create technology
+              solutions that make an impact.
             </motion.p>
           </motion.div>
         </section>
@@ -97,7 +96,7 @@ const About = () => {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-3xl font-bold text-primary text-center mb-8"
+              className="text-3xl font-bold text-primary text-left mb-8"
             >
               My Ventures
             </motion.h2>
@@ -107,7 +106,7 @@ const About = () => {
                 variants={itemVariants}
                 className="bg-white p-6 rounded-xl shadow-custom transition-shadow hover:shadow-hover"
               >
-                <h3 className="text-xl font-semibold text-h3 mb-2">
+                <h3 className="text-xl font-semibold text-secondary mb-2">
                   Laser Crafting Business
                 </h3>
                 <p className="text-text">
@@ -121,7 +120,7 @@ const About = () => {
                 variants={itemVariants}
                 className="bg-white p-6 rounded-xl shadow-custom transition-shadow hover:shadow-hover"
               >
-                <h3 className="text-xl font-semibold text-h3 mb-2">
+                <h3 className="text-xl font-semibold text-secondary mb-2">
                   Valentina Clothing
                 </h3>
                 <p className="text-text">
@@ -135,7 +134,7 @@ const About = () => {
                 variants={itemVariants}
                 className="bg-white p-6 rounded-xl shadow-custom transition-shadow hover:shadow-hover"
               >
-                <h3 className="text-xl font-semibold text-h3 mb-2">
+                <h3 className="text-xl font-semibold text-secondary mb-2">
                   Zephyr Matrix
                 </h3>
                 <p className="text-text">
@@ -146,7 +145,6 @@ const About = () => {
             </div>
           </motion.div>
         </section>
-
         {/* Projects Section */}
         <section className="py-16">
           <motion.div
@@ -157,63 +155,52 @@ const About = () => {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-3xl font-bold text-primary text-center mb-8"
+              className="text-3xl font-bold text-primary text-left mb-8"
             >
               Notable Projects
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Project 1: Binary Classification Model */}
+              {/* Project 1: AI Model for Interior Wall Segmentation and Texture Identification */}
               <motion.div
                 variants={itemVariants}
                 className="bg-white p-6 rounded-xl shadow-custom transition-shadow hover:shadow-hover"
               >
-                <h3 className="text-xl font-semibold text-h3 mb-2">
-                  Binary Classification Model
+                <h3 className="text-xl font-semibold text-secondary mb-2">
+                  AI Model for Interior Image Analysis
                 </h3>
                 <p className="text-text">
-                  Developed a binary classification model using the IMDB dataset
-                  in Keras.
+                  Developed an AI model that identifies interior image objects,
+                  their colors, and wall textures using deep learning
+                  techniques.
                 </p>
               </motion.div>
 
-              {/* Project 2: AI Model for Interior Image Objects */}
+              {/* Project 2: POS System Development */}
               <motion.div
                 variants={itemVariants}
                 className="bg-white p-6 rounded-xl shadow-custom transition-shadow hover:shadow-hover"
               >
-                <h3 className="text-xl font-semibold text-h3 mb-2">
-                  AI Model for Interior Image Objects
-                </h3>
-                <p className="text-text">
-                  An AI model that identifies interior image objects, their
-                  colors, and textures using AWS and Spring Boot.
-                </p>
-              </motion.div>
-
-              {/* Project 3: POS System Development */}
-              <motion.div
-                variants={itemVariants}
-                className="bg-white p-6 rounded-xl shadow-custom transition-shadow hover:shadow-hover"
-              >
-                <h3 className="text-xl font-semibold text-h3 mb-2">
+                <h3 className="text-xl font-semibold text-secondary mb-2">
                   POS System Development
                 </h3>
                 <p className="text-text">
-                  Developing a Point of Sale system using Spring Boot with a
-                  layered architecture.
+                  Developed a full-featured Point of Sale (POS) system using
+                  React and Spring Boot, following a layered architecture with
+                  controllers, DTOs, entities, repositories, and services.
                 </p>
               </motion.div>
 
-              {/* Project 4: React Project - pulye.com */}
+              {/* Project 3: React Project - pulye.com */}
               <motion.div
                 variants={itemVariants}
                 className="bg-white p-6 rounded-xl shadow-custom transition-shadow hover:shadow-hover"
               >
-                <h3 className="text-xl font-semibold text-h3 mb-2">
-                  React Project - pulye.com
+                <h3 className="text-xl font-semibold text-secondary mb-2">
+                  srilankadreamvacation.com - Travel Service Website
                 </h3>
                 <p className="text-text">
-                  Working on a React-based project named pulye.com.
+                  Developing a React-based website for a local travel service,
+                  focusing on user experience and performance.
                 </p>
               </motion.div>
             </div>
@@ -235,12 +222,12 @@ const About = () => {
               Want to know more? Explore my skills, business ventures, and
               projects.
             </motion.p>
-            <div className="space-x-4">
+            <motion.div className="flex flex-col md:flex-row md:space-x-4 items-center justify-center">
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/skills"
-                className="inline-block bg-accent text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300"
+                className="inline-block bg-accent text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300 mb-2 md:mb-0"
               >
                 Skills
               </motion.a>
@@ -248,7 +235,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/business"
-                className="inline-block bg-accent text-white px-6 py-3 rounded-lg hover:bg-secondary-dark transition duration-300"
+                className="inline-block bg-accent text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300 mb-2 md:mb-0"
               >
                 Business
               </motion.a>
@@ -256,11 +243,11 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/projects"
-                className="inline-block bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-dark transition duration-300"
+                className="inline-block bg-accent text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300"
               >
                 Projects
               </motion.a>
-            </div>
+            </motion.div>
           </motion.div>
         </section>
       </main>
