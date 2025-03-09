@@ -8,7 +8,6 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
 - [Contact](#contact)
 
 ## About
@@ -64,33 +63,6 @@ To get a local copy up and running, follow these steps:
    yarn dev
    ```
 5. Open your browser and visit `http://localhost:3000` to see the website.
-
-## Project Structure
-
-```
-my-portfolio/
-├── public/
-│   ├── images/
-│   │   └── isuruPradeep.png
-│   ├── favicon.ico
-│   └── ...
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   └── skills/
-│   │       └── page.tsx
-│   ├── components/
-│   │   ├── Footer.tsx
-│   │   ├── Hero.tsx
-│   │   ├── LoadingSpinner.tsx
-│   │   ├── Navbar.tsx
-│   │   └── ProjectCard.tsx
-│   └── styles/
-│       └── globals.css
-├── README.md
-└── package.json
-```
 
 ## Contact
 
