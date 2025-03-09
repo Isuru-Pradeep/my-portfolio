@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/my-portfolio",
-  assetPrefix: "/my-portfolio", // Remove the trailing slash
+  // basePath: "/my-portfolio",
+  // assetPrefix: "/my-portfolio", // Remove the trailing slash
+  assetPrefix: "./", // for custom domain
   images: {
     unoptimized: true,
   },
