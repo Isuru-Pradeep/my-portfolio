@@ -2,11 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  // basePath: ".", // Replace 'my-portfolio' with your repository name
-  // assetPrefix: "/my-portfolio/", // Replace 'my-portfolio' with your repository name
+  basePath: "/my-portfolio",
+  assetPrefix: "/my-portfolio", // Remove the trailing slash
   images: {
     unoptimized: true,
   },
+  // Very important for GitHub Pages
+  trailingSlash: true, // Add this line
 };
 
 export default nextConfig;
