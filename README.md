@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Isuru Pradeep - Portfolio
+
+Welcome to my personal portfolio website! This project showcases my skills, projects, and business ventures as an AI Engineer and Full Stack Developer.
+
+## Table of Contents
+
+- [About](#about)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Contact](#contact)
+
+## About
+
+I am Isuru Pradeep, an AI Engineer and Full Stack Developer with a passion for building innovative and scalable applications. This portfolio highlights my expertise in various technologies, my recent projects, and my entrepreneurial ventures.
+
+## Features
+
+- **Responsive Design**: The website is fully responsive and looks great on all devices.
+- **Interactive Animations**: Smooth animations using Framer Motion for an engaging user experience.
+- **Projects Showcase**: Detailed descriptions of my recent projects with technologies used.
+- **Skills & Expertise**: A comprehensive list of my technical skills.
+- **Business Ventures**: Information about my entrepreneurial ventures.
+
+## Technologies Used
+
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **React**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Framer Motion**: Library for animations and gestures.
+- **Three.js**: JavaScript 3D library for creating 3D graphics.
+- **TypeScript**: Typed superset of JavaScript.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Isuru-Pradeep/my-portfolio.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd my-portfolio
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+4. Run the development server:
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+   ```
+5. Open your browser and visit `http://localhost:3000` to see the website.
+
+## Project Structure
+
+```
+my-portfolio/
+├── public/
+│   ├── images/
+│   │   └── isuruPradeep.png
+│   ├── favicon.ico
+│   └── ...
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── skills/
+│   │       └── page.tsx
+│   ├── components/
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── LoadingSpinner.tsx
+│   │   ├── Navbar.tsx
+│   │   └── ProjectCard.tsx
+│   └── styles/
+│       └── globals.css
+├── README.md
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contact
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Feel free to reach out to me via the following platforms:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **LinkedIn**: [Isuru Pradeep](https://linkedin.com/in/isuru-pradeep)
+- **GitHub**: [Isuru-Pradeep](https://github.com/Isuru-Pradeep)
+- **WhatsApp**: [+94766664562](https://wa.me/+94766664562)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Thank you for visiting my portfolio!

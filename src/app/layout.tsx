@@ -1,40 +1,37 @@
-import type { Metadata } from "next";
-import { ReactNode } from "react";
-import "../../styles/globals.css";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import '../globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Isuru Pradeep - Full Stack Developer & AI Engineer",
-  description:
-    "Isuru Pradeep's Portfolio: AI Engineer & Full Stack Developer. Showcasing projects in AI, web development, and cloud. Hire Isuru for innovative solutions.",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
+  title: 'Isuru Pradeep',
+  description: 'Isuru Pradeep - AI Engineer | Full Stack Developer',
+  keywords: ['AI Engineer', 'Full Stack Developer', 'Software Engineer'],
+  authors: [{ name: 'Isuru Pradeep' }],
   openGraph: {
-    title: "Isuru Pradeep - Full Stack Developer & AI Engineer",
-    description:
-      "Isuru Pradeep's Portfolio: AI Engineer & Full Stack Developer. Showcasing projects in AI, web development, and cloud. Hire Isuru for innovative solutions.",
-    url: "https://isurupradeep.me",
-    siteName: "Isuru Pradeep Portfolio",
+    title: 'Isuru Pradeep',
+    description: 'Isuru Pradeep - AI Engineer | Full Stack Developer',
+    url: 'https://isurupradeep.me',
+    siteName: 'Isuru Pradeep',
     images: [
       {
-        url: "/images/isuru.jpg", // Use a relevant image in your public directory
-        width: 1200, // Recommended size for social sharing
-        height: 630, // Recommended size for social sharing
-        alt: "Isuru Pradeep - AI Engineer & Full Stack Developer Portfolio",
+        url: 'https://isurupradeep.me/images/isuru.jpg',
+        width: 800,
+        height: 600,
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
-  metadataBase: new URL("https://isurupradeep.me"), // Add this line
-};
+}
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
-  );
+  )
 }
